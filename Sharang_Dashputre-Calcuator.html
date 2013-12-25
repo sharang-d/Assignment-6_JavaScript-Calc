@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="Sharang_Dashputre-Calcuator.css">
+    <script src="Sharang_Dashputre-Calcuator.js"></script>
+</head>
+
+<body>
+    <div>
+        <!-- <form name="frmCalculator"> -->
+        <table border="0px" cellspacing="1px" cellpadding="1px">
+            <tr>
+                <td colspan="5">
+                    <input type="text" class="text-box" id="txtExpression" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="xyz" value="1" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="2" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="3" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="4" onclick="put(this.value)">
+                </td>
+                <td>
+                    <button class="xyz" onclick="special(2)">x<sup>2</sup>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="xyz" value="5" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="6" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="7" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="8" onclick="put(this.value)">
+                </td>
+                <td>
+                    <button class="xyz" onclick="special(3)">x<sup>3</sup>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="xyz" value="9" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="0" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="." onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="+" onclick="put(this.value)">
+                </td>
+                <td>
+                    <button class="xyz" onclick="special(1)">&#8730x</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="xyz" value="-" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="*" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="/" onclick="put(this.value)">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="=" onclick="evaluateExpression()">
+                </td>
+                <td>
+                    <input type="button" class="xyz" value="1/x" onclick="special(0)">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5" align="center">
+                    <input type="button" class="xyz" value="BackSpace" onclick="backspace()">
+                    <input type="button" class="xyz" value="Reset" onclick="reset()">
+                </td>
+            </tr>
+        </table>
+        <!-- </form> -->
+    </div>
+</body>
+
+</html>
