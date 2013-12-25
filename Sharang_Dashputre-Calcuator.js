@@ -2,41 +2,39 @@ var operator = '',
     operand1 = null,
     operand2 = null;
 
-// whenever an operation button or number button is pressed
+// whenever a number button is pressed
 function put(character) {
     var txt = document.getElementById("txtExpression");
-    if (character == '+' || character == '-' || character == '*' || character == '/') {
-        if (txt.value == '')
-            return;
-        if (operator != '') {
-            operand2 = parseFloat(txt.value);
-            var result = operate();
-            txt.value = result + ' ' + character + ' ';
-            operand2 = operand1 = result;
-            // Set operand2 = operator1 to achieve functionality of some
-            // older calculators wherein if you press <number> <operator> 
-            // and keep on pressing = it considers the first
-            // operand as the second operand as well
-            operator = character;
-        } else {
-            operator = character;
-            operand1 = parseFloat(txt.value);
-            txt.value += ' ' + character + ' ';
-            // keep spaces before and after the operators
-            operand2 = null;
-        }
+    if (operator != '') {
+        var c = txt.value.charAt(txt.value.length - 1);
+        if (c == ' ')
+            txt.value = '';
+    } 
+    txt.value += character;
+}
 
+// whenever [+-*/] buttons are pressed
+function putOperator(character) {
+    var txt = document.getElementById("txtExpression");
+    if (txt.value == '')
+        return;
+    if (operator != '') {
+        operand2 = parseFloat(txt.value);
+        var result = operate();
+        txt.value = result + ' ' + character + ' ';
+        operand2 = operand1 = result;
+        // Set operand2 = operator1 to achieve functionality of some
+        // older calculators wherein if you press <number> <operator> 
+        // and keep on pressing '=' it considers the first
+        // operand as the second operand as well
+        operator = character;
     } else {
-        if (operator != '') {
-            var c = txt.value.charAt(txt.value.length - 1);
-            if (c == ' ')
-                txt.value = '';
-            txt.value += character;
-        } else
-            txt.value += character;
-
+        operator = character;
+        operand1 = parseFloat(txt.value);
+        txt.value += ' ' + character + ' ';
+        // keep spaces before and after the operators
+        operand2 = null;
     }
-
 }
 
 // when '=' button is pressed
@@ -51,8 +49,6 @@ function evaluateExpression() {
         operator = '';
         txt.value = result;
     }
-
-
 }
 
 // does the actual (operand1 <operator> operannd2 = ?) calculation
